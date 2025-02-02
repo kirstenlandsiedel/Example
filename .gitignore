@@ -1,0 +1,12 @@
+# Ignore compiled files
+.julia/
+*.jl.cov
+*.jl.mem
+
+# Ignore logs and temporary files
+*.log
+*.tmp
+
+# Ignore Julia package build artifacts
+Manifest.toml
+
