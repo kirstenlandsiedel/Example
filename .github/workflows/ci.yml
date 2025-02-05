@@ -17,13 +17,15 @@ jobs:
       - name: Set up Julia
         uses: julia-actions/setup-julia@v2
         with:
-          version: '1.11'  # Adjust if using a different version
+          version: '1.11'
 
       - name: Install dependencies
         run: |
-          julia -e 'using Pkg; Pkg.instantiate()'
+          cd $GITHUB_WORKSPACE
+          julia -e 'using Pkg; Pkg.activate("."); Pkg.instantiate()'
 
       - name: Run tests
         run: |
+          cd $GITHUB_WORKSPACE
           julia -e 'using Pkg; Pkg.test()'
 
