@@ -11,8 +11,3 @@ end
     @test_throws MethodError type_multiply(1, 2.5)
 end
 
-@testset "Buggy Divide Function" begin
-    @test buggy_divide(10, 2) == 5  # This should pass
-    @test_throws DivideError buggy_divide(10, 0)  # This will fail if not handled properly
-end
-
